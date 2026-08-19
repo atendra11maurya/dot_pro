@@ -1,0 +1,37 @@
+.button {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-body);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+}
+
+/* Primary CTA Button (Cobalt) */
+.primary {
+  background-color: var(--color-cobalt);
+  color: #ffffff;
+  border-radius: var(--radius-buttons);
+  padding: var(--spacing-12) var(--spacing-24);
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+/* Ghost Outline Button */
+.ghost {
+  background-color: transparent;
+  color: var(--color-ivory-text);
+  border: 1px solid var(--color-ivory-text);
+  border-radius: var(--radius-nav); /* 40px radius */
+  padding: var(--spacing-12) var(--spacing-20);
+}
+
+.ghost:hover {
+  background-color: rgba(0, 0, 0, 0.04); /* dark subtle hover */
+}

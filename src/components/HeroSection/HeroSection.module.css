@@ -1,0 +1,455 @@
+.heroTrack {
+  position: relative;
+  width: 100%;
+  height: 180vh;
+  background-color: #08080a;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #08080a;
+}
+
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+/* Blur overlay with radial mask cutout centered on viewport center */
+.blurMaskOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  mask-image: radial-gradient(ellipse at 50% 50%, transparent 12%, rgba(0, 0, 0, 0.45) 36%, black 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, transparent 12%, rgba(0, 0, 0, 0.45) 36%, black 75%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Black gradient overlay closing in from borders towards center */
+.blackVignetteOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 50% 50%, 
+    transparent 10%, 
+    rgba(8, 8, 10, 0.35) 30%, 
+    rgba(8, 8, 10, 0.85) 60%, 
+    rgba(8, 8, 10, 1) 88%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Solid pure black overlay covering the ENTIRE image 100% */
+.solidBlackOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #08080a;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.topVignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.contentWrapper {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  max-width: 900px;
+  width: 95%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.headline {
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 3.2vw, 56px);
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.subtext {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400; 
+  font-size: clamp(0.85rem, 1.05vw, 16px);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 480px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+
+/* Email Capture Form — Mercury Style */
+.formRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 4px;
+}
+
+.emailInput {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background: rgba(20, 20, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: none;
+  border-radius: var(--radius-buttons, 32px) 0 0 var(--radius-buttons, 32px);
+  padding: 12px 18px;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.emailInput::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.emailInput:focus {
+  border-color: var(--color-cobalt, #5266eb);
+}
+
+.formCTA {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--color-cobalt, #5266eb);
+  border: 1px solid var(--color-cobalt, #5266eb);
+  border-radius: 0 var(--radius-buttons, 32px) var(--radius-buttons, 32px) 0;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.formCTA:hover {
+  opacity: 0.9;
+}
+
+.demoCTA {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-buttons, 32px);
+  padding: 12px 20px;
+  cursor: pointer;
+  margin-left: var(--spacing-12, 12px);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.demoCTA:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 2px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* ========================================================
+   FEATURED STORIES SECTION (Portfolio)
+   ======================================================== */
+.portfolioSection {
+  position: relative;
+  width: 100%;
+  background-color: #08080a;
+  padding: var(--spacing-112, 112px) 0;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.portfolioContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-32, 32px);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 var(--spacing-24, 24px);
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-8, 8px);
+  max-width: 680px;
+}
+
+.sectionBadge {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.12);
+  padding: 4px 14px;
+  border-radius: var(--radius-buttons, 32px);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.sectionTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: clamp(2rem, 3.4vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(0.9rem, 1.1vw, 16px);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-24, 24px);
+  width: 100%;
+}
+
+.bentoItem {
+  width: 100%;
+}
+
+.storyCard {
+  background-color: #111116 !important;
+  border-radius: var(--radius-cards, 12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.storyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(82, 102, 235, 0.18);
+  border-color: rgba(82, 102, 235, 0.45) !important;
+}
+
+.cardImagePreview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.cardImagePreview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.05) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.cardTag {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cardPlayBadge {
+  position: relative;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.storyCard:hover .cardPlayBadge {
+  transform: scale(1.1);
+  background: var(--color-cobalt, #5266eb);
+  border-color: var(--color-cobalt, #5266eb);
+}
+
+.cardContent {
+  padding: 20px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #111116;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cardDesc {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ========================================================
+   Responsive Breakpoints
+   ======================================================== */
+@media (max-width: 1024px) {
+  .bentoGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-16, 16px);
+  }
+  .cardTitle {
+    font-size: 16px;
+  }
+  .cardDesc {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: var(--text-heading-lg, 36px);
+  }
+  .content {
+    padding: 20px 16px 0 16px;
+  }
+  .formRow {
+    flex-direction: column;
+    gap: var(--spacing-12, 12px);
+    width: 100%;
+  }
+  .emailInput {
+    width: 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--radius-buttons, 32px);
+  }
+  .formCTA {
+    width: 100%;
+    border-radius: var(--radius-buttons, 32px);
+  }
+  .demoCTA {
+    width: 100%;
+    margin-left: 0;
+  }
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-16, 16px);
+  }
+  .portfolioContainer {
+    gap: var(--spacing-20, 20px);
+  }
+}
+
+
+
+
+
+
+

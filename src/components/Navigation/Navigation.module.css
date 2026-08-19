@@ -1,0 +1,100 @@
+/* Top Banner */
+.banner {
+  width: 100%;
+  background-color: var(--color-cobalt);
+  padding: var(--spacing-8) var(--spacing-16);
+  text-align: center;
+  position: relative;
+  z-index: 101;
+}
+
+.bannerLink {
+  color: #ffffff;
+  font-size: var(--text-body-sm);
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.bannerLink:hover {
+  text-decoration: underline;
+}
+
+/* Navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--spacing-20) 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.navScrolled {
+  background-color: rgba(244, 245, 246, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--spacing-16) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 600;
+  font-size: var(--text-body-sm); /* 14px - reduced 2x from 28px */
+  letter-spacing: 0.12em;
+  color: var(--color-pure-white);
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: var(--spacing-32);
+  align-items: center;
+}
+
+.link {
+  color: var(--color-ash-text);
+  text-decoration: none;
+  font-family: var(--font-inter), sans-serif;
+  font-size: var(--text-body);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--color-pure-white);
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-24);
+  align-items: center;
+}
+
+.loginLink {
+  color: var(--color-ivory-text);
+  text-decoration: none;
+  font-size: var(--text-body);
+  transition: color 0.2s ease;
+}
+
+.loginLink:hover {
+  color: var(--color-pure-white);
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .loginLink {
+    display: none;
+  }
+}
