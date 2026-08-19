@@ -102,7 +102,7 @@ export const HeroSection: React.FC = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" as const }}
               >
-                Let your love story echo...
+                Let your royal love story echo...
               </motion.h1>
               
               <motion.p 
@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" as const }}
               >
-                Inquire today to experience wedding cinema and photography unlike anything that&apos;s come before.
+                Capturing the majesty, sacred rituals, and raw emotion of India&apos;s most opulent weddings and timeless celebrations.
               </motion.p>
 
               {/* Email Capture Form — Mercury Style pill input + button */}
@@ -122,12 +122,12 @@ export const HeroSection: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" as const }}
               >
                 <input 
-                  type="email" 
-                  placeholder="Enter your email" 
+                  type="text" 
+                  placeholder="Enter email or WhatsApp no." 
                   className={styles.emailInput}
                 />
-                <button className={styles.formCTA}>Inquire</button>
-                <button className={styles.demoCTA}>View Reel</button>
+                <button className={styles.formCTA}>Check Dates</button>
+                <button className={styles.demoCTA}>Watch Showreel</button>
               </motion.div>
               
               <motion.p 
@@ -136,7 +136,7 @@ export const HeroSection: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                Available worldwide for destination weddings. Currently booking 2027.
+                Available across India &amp; global destinations. Currently booking 2026–2027 Muhurat dates.
               </motion.p>
             </motion.div>
           </div>
@@ -158,10 +158,10 @@ export const HeroSection: React.FC = () => {
             viewport={{ once: true, margin: "-60px" }}
             variants={fadeInUp}
           >
-            <span className={styles.sectionBadge}>Selected Portfolio</span>
-            <h2 className={styles.sectionTitle}>Featured Stories</h2>
+            <span className={styles.sectionBadge}>Selected Royal Stories</span>
+            <h2 className={styles.sectionTitle}>Featured Celebrations</h2>
             <p className={styles.sectionSubtitle}>
-              A glimpse into the heirloom love stories we&apos;ve had the honour of filming across the world.
+              A glimpse into the heirloom love stories and grand celebrations we&apos;ve had the honour of filming across India &amp; beyond.
             </p>
           </motion.div>
 
@@ -180,13 +180,13 @@ export const HeroSection: React.FC = () => {
                   className={styles.cardImagePreview}
                   style={{ backgroundImage: "url('/hero.jpg')" }}
                 >
-                  <span className={styles.cardTag}>Lake Como, Italy</span>
+                  <span className={styles.cardTag}>Udaipur | Jagmandir Palace</span>
                   <div className={styles.cardPlayBadge}><Play size={14} fill="#fff" /></div>
                 </div>
                 <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>Aarav & Priya</h3>
+                  <h3 className={styles.cardTitle}>Aarav & Meera</h3>
                   <p className={styles.cardDesc}>
-                    A three-day celebration across Villa Balbiano. Cinematic feature film & 35mm film editorial photography.
+                    A 4-day royal celebration across Lake Pichola. 4K cinematic heirloom film &amp; medium format royal portraiture.
                   </p>
                 </div>
               </Card>
@@ -199,13 +199,13 @@ export const HeroSection: React.FC = () => {
                   className={styles.cardImagePreview}
                   style={{ backgroundImage: "url('/thumbnail.jpg')" }}
                 >
-                  <span className={styles.cardTag}>Scottish Highlands</span>
+                  <span className={styles.cardTag}>Jaipur | Rambagh Palace</span>
                   <div className={styles.cardPlayBadge}><Eye size={14} /></div>
                 </div>
                 <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>James & Charlotte</h3>
+                  <h3 className={styles.cardTitle}>Kabir & Ananya</h3>
                   <p className={styles.cardDesc}>
-                    An intimate elopement enveloped in the Scottish mist. Documentary short & fine art album.
+                    A majestic palace wedding steeped in royal marigolds, soulful Sufi night, and an editorial Sangeet feature.
                   </p>
                 </div>
               </Card>
@@ -218,13 +218,13 @@ export const HeroSection: React.FC = () => {
                   className={styles.cardImagePreview}
                   style={{ backgroundImage: "url('/hero-image-new.jpg')" }}
                 >
-                  <span className={styles.cardTag}>Santorini, Greece</span>
+                  <span className={styles.cardTag}>Goa | Cabo Serai Cliffside</span>
                   <div className={styles.cardPlayBadge}><Play size={14} fill="#fff" /></div>
                 </div>
                 <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>Sofia & Marcus</h3>
+                  <h3 className={styles.cardTitle}>Aditya & Rhea</h3>
                   <p className={styles.cardDesc}>
-                    Sunset cliffside vows overlooking the Aegean. Full-length feature film & archival heirloom keepsake.
+                    Sunset cliffside pheras overlooking the Arabian Sea. Full-length feature film &amp; archival heirloom keepsake.
                   </p>
                 </div>
               </Card>

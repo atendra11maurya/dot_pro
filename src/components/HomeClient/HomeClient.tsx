@@ -22,22 +22,22 @@ const staggerContainer = {
 /* Testimonial Data */
 const testimonials = [
   {
-    tag: "Destination",
-    quote: "Dot Production didn't just film our wedding — they immortalized it. Every frame feels like a painting. We've watched our film over fifty times.",
-    name: "Aarav & Priya",
-    role: "Lake Como, Italy"
+    tag: "Udaipur Palace",
+    quote: "Dot Production didn't just film our wedding — they immortalized the very soul of our families. Every frame looks like a Sanjay Leela Bhansali film. Our parents wept tears of joy rewatching our vidaai and pheras.",
+    name: "Aarav & Meera Singhania",
+    role: "Jagmandir Island Palace, Udaipur"
   },
   {
-    tag: "Editorial",
-    quote: "Their presence was invisible yet they captured the most intimate moments we didn't even know existed. This is storytelling at its finest.",
-    name: "James & Charlotte",
-    role: "Scottish Highlands"
+    tag: "Jaipur Heritage",
+    quote: "Their team was virtually invisible yet captured the most intimate, stolen glances we didn't even notice. The Sangeet edit had all 800 guests dancing on their feet at our reception!",
+    name: "Kabir & Ananya Roy Kapur",
+    role: "Rambagh Palace, Jaipur"
   },
   {
-    tag: "Feature Film",
-    quote: "We wanted cinema, not a wedding video. Dot Production delivered something that belongs on the big screen. Our families were speechless.",
-    name: "Sofia & Marcus",
-    role: "Santorini, Greece"
+    tag: "Coastal Shaadi",
+    quote: "We wanted cinema, not a cookie-cutter wedding video. Dot Production delivered something that belongs on the big screen. The colors, audio fidelity, and emotional storytelling are peerless.",
+    name: "Aditya & Rhea Kirloskar",
+    role: "Cabo Serai, Goa"
   }
 ];
 
@@ -65,8 +65,8 @@ export const HomeClient: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <h2 className={styles.sectionTitle}>What We Create</h2>
-          <p className={styles.sectionSubtitle}>Three crafts, one cinematic vision — tailored for the discerning couple.</p>
+          <h2 className={styles.sectionTitle}>What We Craft</h2>
+          <p className={styles.sectionSubtitle}>Three bespoke crafts, one cinematic vision — tailored for the grand Indian wedding.</p>
         </motion.div>
         
         <motion.div 
@@ -79,22 +79,22 @@ export const HomeClient: React.FC = () => {
           <motion.div variants={fadeInUp} className={styles.bentoItem}>
             <Card className={styles.bentoCard}>
               <div className={styles.cardPlaceholder}></div>
-              <h3 className={styles.cardTitle}>Wedding Films</h3>
-              <p className={styles.cardDesc}>A hushed, premium approach to storytelling. We craft 20–30 minute heirloom films that capture the architectural beauty and quiet elegance of your day.</p>
+              <h3 className={styles.cardTitle}>Royal Wedding Cinema</h3>
+              <p className={styles.cardDesc}>A hushed, premium approach to storytelling. We craft 20–30 minute heirloom feature films that capture the architectural grandeur, sacred Vedic rituals, high-energy sangeet, and heartfelt vidaai.</p>
             </Card>
           </motion.div>
           <motion.div variants={fadeInUp} className={styles.bentoItem}>
             <Card className={styles.bentoCard}>
               <div className={styles.cardPlaceholder}></div>
-              <h3 className={styles.cardTitle}>Wedding Photography</h3>
-              <p className={styles.cardDesc}>Vogue-inspired stills captured on medium format. Every frame composed with intention — no candid chaos, just considered, architectural imagery.</p>
+              <h3 className={styles.cardTitle}>Editorial Royal Photography</h3>
+              <p className={styles.cardDesc}>Vogue India-inspired stills captured on medium format. Every frame composed with intention — royal portraiture paired with authentic, unscripted family warmth.</p>
             </Card>
           </motion.div>
           <motion.div variants={fadeInUp} className={styles.bentoItem}>
             <Card className={styles.bentoCard}>
               <div className={styles.cardPlaceholder}></div>
-              <h3 className={styles.cardTitle}>Wedding Albums</h3>
-              <p className={styles.cardDesc}>Hand-bound heirloom albums printed on fine art paper. A tangible, archival keepsake designed to last generations.</p>
+              <h3 className={styles.cardTitle}>Handcrafted Heirloom Albums</h3>
+              <p className={styles.cardDesc}>Bespoke, silk-bound heirloom albums printed on museum-grade Italian fine art paper. A tangible, timeless archival keepsake designed to last generations.</p>
             </Card>
           </motion.div>
         </motion.div>
@@ -111,25 +111,25 @@ export const HomeClient: React.FC = () => {
               className={styles.sectionTitle}
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
             >
-              Our Approach
+              Our Ethos
             </motion.h2>
             <motion.p 
               className={styles.statementText}
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
             >
-              You&apos;re creating a moment to stand the test of time. So are we.
+              You are creating a legacy that will echo for centuries. We ensure it never fades.
             </motion.p>
             <motion.p 
               className={styles.approachText}
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
             >
-              We believe in an unobtrusive presence. Your day is a masterpiece, and we are simply the curators. No forced posing, just authentic, editorial observation.
+              We honor the sanctity of Indian rituals — from the sacred agni of the pheras to the exuberance of the baraat and the tearful intimacy of the vidaai. An unobtrusive presence capturing unposed royalty and genuine emotions without turning your celebration into a movie set.
             </motion.p>
             <motion.div 
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
             >
               <Button variant="ghost">
-                Learn More <ArrowRight size={16} style={{ marginLeft: 8 }} />
+                Explore Our Ethos <ArrowRight size={16} style={{ marginLeft: 8 }} />
               </Button>
             </motion.div>
           </div>
@@ -149,12 +149,12 @@ export const HomeClient: React.FC = () => {
         {/* Logo Cloud */}
         <div className={styles.logoCloud}>
           <div className={`container ${styles.logoContainer}`}>
-            <p className={styles.logoLabel}>Featured in</p>
+            <p className={styles.logoLabel}>Featured in &amp; Celebrated by</p>
             <div className={styles.logos}>
-              <span className={styles.logoItem}>VOGUE</span>
-              <span className={styles.logoItem}>BRIDES</span>
+              <span className={styles.logoItem}>VOGUE INDIA</span>
+              <span className={styles.logoItem}>WEDMEGOOD</span>
               <span className={styles.logoItem}>HARPER&apos;S BAZAAR</span>
-              <span className={styles.logoItem}>OVER THE MOON</span>
+              <span className={styles.logoItem}>WEDDINGSUTRA</span>
             </div>
           </div>
         </div>
@@ -170,19 +170,19 @@ export const HomeClient: React.FC = () => {
           >
             <motion.div className={styles.stat} variants={fadeInUp}>
               <span className={styles.statNumber}>500+</span>
-              <span className={styles.statLabel}>Weddings filmed</span>
+              <span className={styles.statLabel}>Weddings immortalized</span>
             </motion.div>
             <motion.div className={styles.stat} variants={fadeInUp}>
-              <span className={styles.statNumber}>32</span>
-              <span className={styles.statLabel}>Countries</span>
+              <span className={styles.statNumber}>28</span>
+              <span className={styles.statLabel}>States &amp; Global Venues</span>
             </motion.div>
             <motion.div className={styles.stat} variants={fadeInUp}>
-              <span className={styles.statNumber}>12</span>
-              <span className={styles.statLabel}>International awards</span>
+              <span className={styles.statNumber}>15+</span>
+              <span className={styles.statLabel}>National &amp; Global Awards</span>
             </motion.div>
             <motion.div className={styles.stat} variants={fadeInUp}>
-              <span className={styles.statNumber}>4.9</span>
-              <span className={styles.statLabel}>Google rating</span>
+              <span className={styles.statNumber}>4.9★</span>
+              <span className={styles.statLabel}>Rated by 300+ Couples</span>
             </motion.div>
           </motion.div>
         </div>
@@ -203,6 +203,7 @@ export const HomeClient: React.FC = () => {
                 <div key={i} className={styles.progressTrack}>
                   <div 
                     className={`${styles.progressFill} ${i === activeTestimonial ? styles.progressActive : ''} ${i < activeTestimonial ? styles.progressDone : ''}`} 
+                    style={{ animationDuration: '6s' }}
                   />
                 </div>
               ))}
@@ -216,26 +217,26 @@ export const HomeClient: React.FC = () => {
             className={styles.pressTitle}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
           >
-            In the spotlight
+            In the Spotlight
           </motion.h3>
           <motion.div 
             className={styles.pressGrid}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className={styles.pressCard}>
-              <div className={styles.pressLogo}>VOGUE</div>
-              <h3 className={styles.pressHeadline}>&ldquo;The cinematographers redefining wedding films&rdquo;</h3>
-              <p className={styles.pressExcerpt}>Vogue Weddings, 2025</p>
+              <div className={styles.pressLogo}>VOGUE INDIA</div>
+              <h3 className={styles.pressHeadline}>&ldquo;The cinematographers redefining how modern India experiences royal weddings&rdquo;</h3>
+              <p className={styles.pressExcerpt}>Vogue Weddings Special, 2025</p>
             </motion.div>
             <motion.div variants={fadeInUp} className={styles.pressCard}>
-              <div className={styles.pressLogo}>BRIDES</div>
-              <h3 className={styles.pressHeadline}>&ldquo;Top 10 wedding filmmakers you need to know&rdquo;</h3>
-              <p className={styles.pressExcerpt}>Brides Magazine, 2024</p>
+              <div className={styles.pressLogo}>WEDDINGSUTRA</div>
+              <h3 className={styles.pressHeadline}>&ldquo;Top luxury wedding filmmakers you need for your destination palace wedding&rdquo;</h3>
+              <p className={styles.pressExcerpt}>WeddingSutra Influencer Awards</p>
             </motion.div>
             <motion.div variants={fadeInUp} className={styles.pressCard}>
-              <div className={styles.pressLogo}>BAZAAR</div>
-              <h3 className={styles.pressHeadline}>&ldquo;Where editorial photography meets cinema&rdquo;</h3>
-              <p className={styles.pressExcerpt}>Harper&apos;s Bazaar, 2025</p>
+              <div className={styles.pressLogo}>HARPER&apos;S BAZAAR</div>
+              <h3 className={styles.pressHeadline}>&ldquo;Where royal Indian heritage meets modern high-fashion editorial cinema&rdquo;</h3>
+              <p className={styles.pressExcerpt}>Harper&apos;s Bazaar Bride India</p>
             </motion.div>
           </motion.div>
         </div>
@@ -257,52 +258,52 @@ export const HomeClient: React.FC = () => {
             className={styles.sectionSubtitle}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
           >
-            Available worldwide for destination weddings. Currently booking 2027.
+            Now reserving dates for the upcoming 2026–2027 Indian Wedding &amp; Muhurat Season across India &amp; worldwide.
           </motion.p>
           <motion.div 
             className={styles.finalButtons}
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
           >
-            <Button variant="primary">Inquire for 2027</Button>
-            <Button variant="ghost">View Reel</Button>
+            <Button variant="primary">Reserve Your Muhurat Dates</Button>
+            <Button variant="ghost">Watch Showreel</Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Footer — unchanged */}
+      {/* Footer */}
       <footer className={styles.footer}>
         <div className={`container`}>
           <div className={styles.footerTop}>
             <div className={styles.footerBrand}>
               <span className={styles.footerLogo}>DOT PRODUCTION</span>
-              <p className={styles.footerTagline}>Cinematic wedding films<br/>& editorial photography.</p>
+              <p className={styles.footerTagline}>Luxury Indian wedding films<br/>&amp; editorial heritage photography.</p>
             </div>
             <div className={styles.footerColumns}>
               <div className={styles.footerCol}>
                 <h4 className={styles.footerColTitle}>Services</h4>
-                <a href="#" className={styles.footerLink}>Feature Films</a>
-                <a href="#" className={styles.footerLink}>Photography</a>
-                <a href="#" className={styles.footerLink}>Destination</a>
-                <a href="#" className={styles.footerLink}>Same-Day Edit</a>
+                <a href="#" className={styles.footerLink}>Grand Feature Films</a>
+                <a href="#" className={styles.footerLink}>Royal Photography</a>
+                <a href="#" className={styles.footerLink}>Destination Shaadi</a>
+                <a href="#" className={styles.footerLink}>Same-Day Sangeet Edit</a>
               </div>
               <div className={styles.footerCol}>
                 <h4 className={styles.footerColTitle}>Company</h4>
-                <a href="#" className={styles.footerLink}>About</a>
-                <a href="#" className={styles.footerLink}>Portfolio</a>
-                <a href="#" className={styles.footerLink}>Journal</a>
-                <a href="#" className={styles.footerLink}>Pricing</a>
+                <a href="#" className={styles.footerLink}>Our Ethos</a>
+                <a href="#" className={styles.footerLink}>Royal Portfolio</a>
+                <a href="#" className={styles.footerLink}>Journal &amp; Stories</a>
+                <a href="#" className={styles.footerLink}>Muhurat Pricing</a>
               </div>
               <div className={styles.footerCol}>
                 <h4 className={styles.footerColTitle}>Connect</h4>
                 <a href="#" className={styles.footerLink}>Instagram</a>
-                <a href="#" className={styles.footerLink}>Vimeo</a>
+                <a href="#" className={styles.footerLink}>YouTube / Vimeo</a>
                 <a href="#" className={styles.footerLink}>Pinterest</a>
-                <a href="#" className={styles.footerLink}>Contact</a>
+                <a href="#" className={styles.footerLink}>Contact Us</a>
               </div>
             </div>
           </div>
           <div className={styles.footerBottom}>
-            <p className={styles.footerDisclaimer}>© 2025 Dot Production. All rights reserved. Photography and films are for personal use only.</p>
+            <p className={styles.footerDisclaimer}>© 2026 Dot Production. All rights reserved. Cinematic wedding films &amp; editorial photography for personal archival use.</p>
           </div>
         </div>
       </footer>

@@ -20,7 +20,7 @@ export const Navigation: React.FC = () => {
       {/* Top Banner */}
       <div className={styles.banner}>
         <Link href="#services" className={styles.bannerLink}>
-          ✦ Now booking 2027 destination weddings — Tuscany, Lake Como, Scottish Highlands. →
+          ✦ Now reserving 2026–2027 Wedding Season — Udaipur, Jaipur, Jodhpur, Goa & Global Destinations. →
         </Link>
       </div>
 
@@ -30,15 +30,15 @@ export const Navigation: React.FC = () => {
             DOT PRODUCTION
           </Link>
           <div className={styles.links}>
-            <Link href="#films" className={styles.link}>Films</Link>
-            <Link href="#photography" className={styles.link}>Photography</Link>
+            <Link href="#films" className={styles.link}>Wedding Films</Link>
+            <Link href="#photography" className={styles.link}>Royal Photography</Link>
             <Link href="#services" className={styles.link}>Services</Link>
-            <Link href="#about" className={styles.link}>About</Link>
-            <Link href="#pricing" className={styles.link}>Pricing</Link>
+            <Link href="#about" className={styles.link}>Our Ethos</Link>
+            <Link href="#testimonials" className={styles.link}>Stories</Link>
           </div>
           <div className={styles.actions}>
-            <Link href="#" className={styles.loginLink}>Client Login</Link>
-            <Button variant="primary">Inquire</Button>
+            <Link href="#" className={styles.loginLink}>Client Portal</Link>
+            <Button variant="primary">Reserve Dates</Button>
           </div>
         </div>
       </nav>

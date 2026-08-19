@@ -13,8 +13,8 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Dot Production | Premium Wedding Cinema",
-  description: "A cinematic wedding production house.",
+  title: "Dot Production | Luxury Indian Wedding Cinema & Royal Photography",
+  description: "Premier luxury Indian wedding filmmakers and editorial photographers capturing royal heritage and destination weddings across Udaipur, Jaipur, Goa, and worldwide.",
 };
 
 export default function RootLayout({
