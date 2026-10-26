@@ -90,11 +90,210 @@
   color: var(--color-pure-white);
 }
 
+/* Mobile Actions & Hamburger */
+.mobileHeaderActions {
+  display: none;
+}
+
+.hamburgerBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-pure-white);
+  padding: 6px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  z-index: 1002;
+}
+
+.hamburgerBtn:active {
+  transform: scale(0.92);
+}
+
+.mobileReserveBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-cobalt);
+  color: #ffffff !important;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.mobileReserveBtn:hover {
+  opacity: 0.9;
+}
+
+/* Mobile Drawer Overlay */
+.mobileDrawer {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .bannerLink {
+    font-size: 11px;
+    line-height: 1.35;
+    display: inline-block;
+  }
+
+  .banner {
+    padding: 6px 12px;
+  }
+
+  .nav {
+    padding: 12px 0;
+  }
+
+  .navScrolled {
+    padding: 10px 0;
+  }
+
+  .brand {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
   .links {
     display: none;
   }
-  .loginLink {
+
+  .actions {
     display: none;
+  }
+
+  .mobileHeaderActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1002;
+  }
+
+  .hamburgerBtn {
+    display: flex;
+  }
+
+  .mobileDrawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background: rgba(10, 10, 14, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 1000;
+    flex-direction: column;
+    padding: 90px 24px 32px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+  }
+
+  .mobileDrawerOpen {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobileDrawerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    gap: 32px;
+  }
+
+  .mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileNavLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-family: var(--font-syne), sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .mobileNavLink:hover, .mobileNavLink:active {
+    color: #818cf8;
+    padding-left: 8px;
+  }
+
+  .linkArrow {
+    color: rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .mobileNavLink:hover .linkArrow,
+  .mobileNavLink:active .linkArrow {
+    transform: translateX(4px);
+    color: #818cf8;
+  }
+
+  .mobileDrawerFooter {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .drawerPrimaryBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-cobalt);
+    color: #ffffff !important;
+    padding: 14px 20px;
+    border-radius: var(--radius-buttons);
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(82, 102, 235, 0.35);
+  }
+
+  .drawerWhatsAppBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(37, 211, 102, 0.12);
+    color: #25d366 !important;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    padding: 12px 20px;
+    border-radius: var(--radius-buttons);
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .mobileDrawerTagline {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: center;
+    margin-top: 4px;
   }
 }

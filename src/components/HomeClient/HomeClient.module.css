@@ -1,4 +1,22 @@
 /* ===========================
+   Services Badge & Headers
+   =========================== */
+.servicesBadge {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 4px 14px;
+  border-radius: var(--radius-buttons, 32px);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  display: inline-block;
+  width: fit-content;
+}
+
+/* ===========================
    Logo Cloud
    =========================== */
 .logoCloud {
@@ -47,7 +65,7 @@
   background: var(--color-graphite-card);
   border-radius: var(--radius-cards);
   padding: var(--spacing-56);
-  min-height: 400px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -55,37 +73,68 @@
   position: relative;
   overflow: hidden;
   border: 1px solid var(--color-mist-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.testimonialHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .testimonialTag {
-  position: absolute;
-  top: var(--spacing-24);
-  left: var(--spacing-24);
   background-color: var(--color-pure-white);
-  color: var(--color-graphite-card);
+  color: #ffffff;
   font-size: var(--text-caption);
   font-weight: 500;
-  padding: var(--spacing-4) var(--spacing-12);
+  padding: 5px 14px;
   border-radius: var(--radius-default);
+  letter-spacing: 0.03em;
+}
+
+.testimonialNavButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.testimonialNavBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--color-mist-border);
+  background: var(--color-onyx-canvas);
+  color: var(--color-pure-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.testimonialNavBtn:hover {
+  background: var(--color-cobalt);
+  color: #ffffff;
+  border-color: var(--color-cobalt);
 }
 
 .testimonialQuote {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-heading-sm);
-  line-height: var(--leading-heading-sm);
+  font-size: clamp(1.2rem, 2vw, 26px);
+  line-height: 1.35;
   color: var(--color-pure-white);
   font-weight: 400;
-  max-width: 600px;
+  max-width: 680px;
 }
 
 .testimonialAuthor {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .authorName {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-pure-white);
   font-size: var(--text-body);
 }
@@ -103,10 +152,13 @@
 
 .progressTrack {
   flex: 1;
-  height: 3px;
+  height: 4px;
   background-color: var(--color-mist-border);
   border-radius: 2px;
   overflow: hidden;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .progressFill {
@@ -117,7 +169,8 @@
 }
 
 .progressActive {
-  animation: fillProgress 6s linear forwards;
+  animation: fillProgress 7s linear forwards;
+  background-color: var(--color-cobalt);
 }
 
 .progressDone {
@@ -140,10 +193,11 @@
 
 .statementText {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-heading-lg);
-  line-height: var(--leading-heading-lg);
+  font-size: clamp(1.5rem, 2.5vw, 38px);
+  line-height: 1.25;
   color: var(--color-pure-white);
   max-width: 800px;
+  text-wrap: balance;
 }
 
 /* ===========================
@@ -168,22 +222,16 @@
 
 .statNumber {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-display);
-  font-weight: 500;
+  font-size: clamp(2.2rem, 3.5vw, 56px);
+  font-weight: 600;
   color: var(--color-pure-white);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .statLabel {
   font-size: var(--text-body);
   color: var(--color-ash-text);
-}
-
-@media (max-width: 768px) {
-  .statsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-40);
-  }
+  line-height: 1.4;
 }
 
 /* ===========================
@@ -203,19 +251,21 @@
 
 .sectionTitle {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-heading-lg);
-  letter-spacing: 0.01em;
+  font-size: clamp(1.85rem, 3vw, 42px);
+  letter-spacing: -0.01em;
   color: var(--color-pure-white);
+  line-height: 1.2;
 }
 
 .sectionSubtitle {
   color: var(--color-ash-text);
-  font-size: var(--text-body-lg);
+  font-size: clamp(0.95rem, 1.2vw, 18px);
+  line-height: 1.5;
 }
 
 .bentoGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-24);
 }
 
@@ -226,42 +276,75 @@
 .bentoCard {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-16);
   padding: 0 !important;
   overflow: hidden;
+  height: 100%;
+  background: var(--color-graphite-card);
+  border: 1px solid var(--color-mist-border);
+  border-radius: var(--radius-cards);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cardPlaceholder {
+.bentoCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(82, 102, 235, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.craftPreview {
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, var(--color-mist-border) 0%, var(--color-obsidian-button) 100%);
-  border-radius: var(--radius-cards) var(--radius-cards) 0 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+
+.craftPreview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 60%);
+}
+
+.craftTag {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.craftContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 
 .cardTitle {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-subheading);
+  font-size: 20px;
+  font-weight: 600;
   color: var(--color-pure-white);
-  padding: 0 var(--spacing-32);
-  padding-top: var(--spacing-24);
+  margin: 0;
 }
 
 .cardDesc {
   color: var(--color-ash-text);
-  font-size: var(--text-body);
-  padding: 0 var(--spacing-32);
-  padding-bottom: var(--spacing-32);
-}
-
-@media (max-width: 768px) {
-  .bentoGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 3-column variant: last child spans full width on odd count */
-.bentoGrid > *:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ===========================
@@ -282,55 +365,75 @@
 
 .approachSticky {
   position: sticky;
-  top: 120px;
+  top: 100px;
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--spacing-24);
+  gap: var(--spacing-20);
 }
 
 .approachText {
   color: var(--color-ash-text);
-  font-size: var(--text-body-lg);
-  line-height: var(--leading-body-lg);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .approachScroll {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-32);
+  gap: var(--spacing-24);
 }
 
-.scrollPlaceholder {
-  width: 100%;
-  aspect-ratio: 4 / 5;
+.ethosCard {
   background: var(--color-graphite-card);
   border-radius: var(--radius-cards);
   border: 1px solid var(--color-mist-border);
+  padding: var(--spacing-32);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .approachContainer {
-    grid-template-columns: 1fr;
-    padding-top: var(--spacing-72);
-    padding-bottom: var(--spacing-72);
-  }
-  .approachSticky {
-    position: relative;
-    top: 0;
-  }
+.ethosCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(82, 102, 235, 0.3);
+}
+
+.ethosTag {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-cobalt);
+  text-transform: uppercase;
+}
+
+.ethosTitle {
+  font-family: var(--font-syne), sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-pure-white);
+  margin: 0;
+}
+
+.ethosDesc {
+  color: var(--color-ash-text);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ===========================
    Press / In the Spotlight
    =========================== */
-
 .pressTitle {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-heading-lg);
+  font-size: clamp(1.75rem, 2.5vw, 36px);
   color: var(--color-pure-white);
-  margin-bottom: var(--spacing-40);
+  margin-bottom: var(--spacing-32);
 }
 
 .pressGrid {
@@ -346,40 +449,34 @@
   padding: var(--spacing-32);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-20);
+  gap: var(--spacing-16);
   transition: all 0.3s ease;
 }
 
 .pressCard:hover {
   transform: translateY(-2px);
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .pressLogo {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-heading);
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--color-ash-text);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 
 .pressHeadline {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-subheading);
+  font-size: 17px;
   color: var(--color-pure-white);
-  font-weight: 400;
-  line-height: 1.3;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .pressExcerpt {
   color: var(--color-ash-text);
-  font-size: var(--text-body-sm);
-}
-
-@media (max-width: 768px) {
-  .pressGrid {
-    grid-template-columns: 1fr;
-  }
+  font-size: 12px;
 }
 
 /* ===========================
@@ -387,7 +484,7 @@
    =========================== */
 .finalCTA {
   background-color: var(--color-graphite-card);
-  padding: 120px 0;
+  padding: 100px 0;
   border-top: 1px solid var(--color-mist-border);
 }
 
@@ -396,26 +493,79 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--spacing-40);
+  gap: var(--spacing-24);
+  max-width: 780px;
 }
 
 .finalTitle {
   font-family: var(--font-syne), sans-serif;
-  font-size: var(--text-display);
+  font-size: clamp(2rem, 3.8vw, 48px);
   color: var(--color-pure-white);
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 .finalButtons {
   display: flex;
   gap: var(--spacing-16);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.ctaPrimaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-cobalt);
+  color: #ffffff !important;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--radius-buttons);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(82, 102, 235, 0.3);
+  transition: all 0.2s ease;
+}
+
+.ctaPrimaryBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.ctaWhatsAppBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(37, 211, 102, 0.1);
+  color: #128c7e !important;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 26px;
+  border-radius: var(--radius-buttons);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ctaWhatsAppBtn:hover {
+  background: rgba(37, 211, 102, 0.18);
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   Mobile Floating Action Dock
+   =========================== */
+.mobileFloatingDock {
+  display: none;
 }
 
 /* ===========================
    Footer
-   =========================== */
-
-/* ===========================
-   Trust Section (wraps logos, stats, testimonials, press)
    =========================== */
 .trustSection {
   background-color: var(--color-onyx-canvas);
@@ -425,27 +575,27 @@
 .footer {
   background-color: var(--color-onyx-canvas);
   border-top: 1px solid var(--color-mist-border);
-  padding: var(--spacing-72) 0 var(--spacing-32);
+  padding: var(--spacing-56) 0 var(--spacing-32);
 }
 
 .footerTop {
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-72);
-  padding-bottom: var(--spacing-56);
+  padding-bottom: var(--spacing-40);
 }
 
 .footerBrand {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-16);
-  max-width: 300px;
+  gap: var(--spacing-12);
+  max-width: 320px;
 }
 
 .footerLogo {
   font-family: var(--font-syne), sans-serif;
   font-weight: 600;
-  font-size: var(--text-body-sm); /* 14px - reduced 2x from 28px */
+  font-size: 14px;
   letter-spacing: 0.12em;
   color: var(--color-pure-white);
 }
@@ -458,7 +608,7 @@
 
 .footerColumns {
   display: flex;
-  gap: var(--spacing-72);
+  gap: var(--spacing-56);
 }
 
 .footerCol {
@@ -468,18 +618,21 @@
 }
 
 .footerColTitle {
-  font-weight: 500;
-  font-size: var(--text-body-sm);
+  font-weight: 600;
+  font-size: 13px;
   color: var(--color-pure-white);
   margin-bottom: var(--spacing-4);
   font-family: var(--font-inter), sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .footerLink {
   color: var(--color-ash-text);
   text-decoration: none;
-  font-size: var(--text-body-sm);
+  font-size: 14px;
   transition: color 0.2s ease;
+  padding: 2px 0;
 }
 
 .footerLink:hover {
@@ -488,22 +641,198 @@
 
 .footerBottom {
   border-top: 1px solid var(--color-mist-border);
-  padding-top: var(--spacing-24);
+  padding-top: var(--spacing-20);
 }
 
 .footerDisclaimer {
   font-size: var(--text-caption);
   color: var(--color-ash-text);
-
+  line-height: 1.5;
 }
 
+/* ========================================================
+   Responsive Breakpoints: Mobile (max-width: 768px)
+   ======================================================== */
 @media (max-width: 768px) {
+  .logos {
+    gap: var(--spacing-24);
+  }
+
+  .logoItem {
+    font-size: 14px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-24);
+  }
+
+  .statNumber {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .statLabel {
+    font-size: 13px;
+  }
+
+  .servicesSection {
+    gap: var(--spacing-32);
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-16);
+  }
+
+  .craftContent {
+    padding: 18px 16px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardDesc {
+    font-size: 13px;
+  }
+
+  .approachContainer {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-32);
+    padding-top: var(--spacing-48);
+    padding-bottom: var(--spacing-48);
+  }
+
+  .approachSticky {
+    position: relative;
+    top: 0;
+    gap: var(--spacing-16);
+  }
+
+  .statementText {
+    font-size: clamp(1.4rem, 5.8vw, 1.85rem);
+    line-height: 1.25;
+  }
+
+  .approachText {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ethosCard {
+    padding: var(--spacing-20);
+  }
+
+  .ethosTitle {
+    font-size: 18px;
+  }
+
+  .ethosDesc {
+    font-size: 13px;
+  }
+
+  .testimonialCard {
+    padding: var(--spacing-24) var(--spacing-20);
+    min-height: auto;
+    gap: var(--spacing-16);
+  }
+
+  .testimonialQuote {
+    font-size: clamp(1.05rem, 4.4vw, 1.3rem);
+    line-height: 1.4;
+  }
+
+  .pressGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-16);
+  }
+
+  .pressCard {
+    padding: var(--spacing-20);
+  }
+
+  .finalCTA {
+    padding: 56px 0;
+  }
+
+  .finalTitle {
+    font-size: clamp(1.65rem, 6.5vw, 2.2rem);
+  }
+
+  .finalButtons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .ctaPrimaryBtn, .ctaWhatsAppBtn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 14px;
+  }
+
   .footerTop {
     flex-direction: column;
-    gap: var(--spacing-40);
+    gap: var(--spacing-32);
   }
+
+  .footer {
+    padding-bottom: calc(var(--spacing-32) + 72px);
+  }
+
   .footerColumns {
-    flex-wrap: wrap;
-    gap: var(--spacing-40);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-24);
+  }
+
+  /* Floating Mobile Action Dock */
+  .mobileFloatingDock {
+    display: flex;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 99;
+    background: rgba(15, 15, 20, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    padding: 6px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    gap: 8px;
+  }
+
+  .mobileDockReserveBtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: var(--color-cobalt);
+    color: #ffffff;
+    border: none;
+    border-radius: 32px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .mobileDockWhatsAppBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(37, 211, 102, 0.15);
+    color: #25d366 !important;
+    border: 1px solid rgba(37, 211, 102, 0.35);
+    border-radius: 32px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
   }
 }

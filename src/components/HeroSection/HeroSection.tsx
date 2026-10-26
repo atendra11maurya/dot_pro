@@ -126,8 +126,22 @@ export const HeroSection: React.FC = () => {
                   placeholder="Enter email or WhatsApp no." 
                   className={styles.emailInput}
                 />
-                <button className={styles.formCTA}>Check Dates</button>
-                <button className={styles.demoCTA}>Watch Showreel</button>
+                <button 
+                  className={styles.formCTA}
+                  onClick={() => {
+                    document.getElementById('enquire')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Check Dates
+                </button>
+                <button 
+                  className={styles.demoCTA}
+                  onClick={() => {
+                    document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Watch Showreel
+                </button>
               </motion.div>
               
               <motion.p 
