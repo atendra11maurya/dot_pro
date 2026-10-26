@@ -231,7 +231,7 @@
   position: relative;
   width: 100%;
   background-color: #08080a;
-  padding: var(--spacing-112, 112px) 0;
+  padding: 130px 0 140px;
   display: flex;
   justify-content: center;
   z-index: 5;
@@ -241,10 +241,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-32, 32px);
+  gap: 48px;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 var(--spacing-24, 24px);
+  max-width: 1260px;
+  padding: 0 32px;
 }
 
 .sectionHeader {
@@ -252,7 +252,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--spacing-8, 8px);
+  gap: 14px;
   max-width: 680px;
 }
 
@@ -267,6 +267,7 @@
   padding: 4px 14px;
   border-radius: var(--radius-buttons, 32px);
   border: 1px solid rgba(99, 102, 241, 0.25);
+  margin-bottom: 2px;
 }
 
 .sectionTitle {
@@ -281,16 +282,16 @@
 
 .sectionSubtitle {
   font-family: var(--font-inter), sans-serif;
-  font-size: clamp(0.9rem, 1.1vw, 16px);
+  font-size: clamp(0.92rem, 1.1vw, 16px);
   color: rgba(255, 255, 255, 0.65);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
 }
 
 .bentoGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-24, 24px);
+  gap: 32px;
   width: 100%;
 }
 
@@ -300,7 +301,7 @@
 
 .storyCard {
   background-color: #111116 !important;
-  border-radius: var(--radius-cards, 12px);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   overflow: hidden;
   display: flex;
@@ -314,7 +315,7 @@
 
 .storyCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 24px rgba(82, 102, 235, 0.18);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 28px rgba(82, 102, 235, 0.2);
   border-color: rgba(82, 102, 235, 0.45) !important;
 }
 
@@ -327,7 +328,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 14px;
+  padding: 16px;
 }
 
 .cardImagePreview::before {
@@ -356,8 +357,8 @@
 .cardPlayBadge {
   position: relative;
   z-index: 2;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
@@ -377,27 +378,28 @@
 }
 
 .cardContent {
-  padding: 20px 22px 22px 22px;
+  padding: 24px 26px 26px 26px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   background: #111116;
   flex: 1;
 }
 
 .cardTitle {
   font-family: var(--font-syne), sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 600;
   color: #ffffff;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .cardDesc {
   font-family: var(--font-inter), sans-serif;
-  font-size: 13px;
+  font-size: 13.5px;
   color: rgba(255, 255, 255, 0.65);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
 }
 

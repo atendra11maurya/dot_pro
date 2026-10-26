@@ -26,18 +26,19 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: var(--spacing-20) 0;
+  padding: 24px 0;
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   background-color: transparent;
 }
 
 .navScrolled {
-  background-color: rgba(244, 245, 246, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: var(--spacing-16) 0;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 16px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
 }
 
 .container {
@@ -49,15 +50,20 @@
 .brand {
   font-family: var(--font-syne), sans-serif;
   font-weight: 600;
-  font-size: var(--text-body-sm); /* 14px - reduced 2x from 28px */
-  letter-spacing: 0.12em;
+  font-size: 14.5px;
+  letter-spacing: 0.14em;
   color: var(--color-pure-white);
   text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.brand:hover {
+  opacity: 0.85;
 }
 
 .links {
   display: flex;
-  gap: var(--spacing-32);
+  gap: 36px;
   align-items: center;
 }
 
@@ -65,8 +71,10 @@
   color: var(--color-ash-text);
   text-decoration: none;
   font-family: var(--font-inter), sans-serif;
-  font-size: var(--text-body);
+  font-size: 14.5px;
+  font-weight: 500;
   transition: color 0.2s ease;
+  letter-spacing: 0.01em;
 }
 
 .link:hover {
