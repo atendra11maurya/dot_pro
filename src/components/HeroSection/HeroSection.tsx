@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from 'react';
 import styles from './HeroSection.module.css';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Card } from '../Card/Card';
 import { Play, Eye } from 'lucide-react';
 
@@ -30,22 +30,30 @@ export const HeroSection: React.FC = () => {
     offset: ["start start", "end end"]
   });
 
-  // 1. Deep dramatic cinematic zoom centered on the couple's gown tail points & held hands
-  const scale = useTransform(scrollYProgress, [0, 0.85, 1], [1, 2.8, 2.8]);
+  // Physics spring for fluid, silky-smooth synchronized zooming and scroll momentum
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 26,
+    mass: 0.6,
+    restDelta: 0.0005
+  });
 
-  // Translate so the tail points/hands smoothly animate into center
-  const imageY = useTransform(scrollYProgress, [0, 0.85, 1], ["0vh", "-14vh", "-14vh"]);
-  const imageX = useTransform(scrollYProgress, [0, 0.85, 1], ["0vw", "-1vw", "-1vw"]);
+  // 1. Deep cinematic zoom seamlessly synchronized through the full scroll range
+  const scale = useTransform(smoothProgress, [0, 1], [1, 2.35]);
+
+  // Translate smoothly to bring the couple and hands into focus
+  const imageY = useTransform(smoothProgress, [0, 1], ["0vh", "-12vh"]);
+  const imageX = useTransform(smoothProgress, [0, 1], ["0vw", "-1vw"]);
 
   // 2. Initial hero typography fades out smoothly as scroll initiates
-  const heroTextOpacity = useTransform(scrollYProgress, [0, 0.25, 1], [1, 0, 0]);
-  const heroTextY = useTransform(scrollYProgress, [0, 0.25, 1], [0, -25, -25]);
+  const heroTextOpacity = useTransform(smoothProgress, [0, 0.24], [1, 0]);
+  const heroTextY = useTransform(smoothProgress, [0, 0.24], [0, -30]);
 
-  // 3. Vignette mask and edge blur creep inward from borders towards center
-  const vignetteMaskOpacity = useTransform(scrollYProgress, [0.15, 0.70, 1], [0, 1, 1]);
+  // 3. Vignette mask and edge blur creep inward smoothly
+  const vignetteMaskOpacity = useTransform(smoothProgress, [0.08, 0.85], [0, 1]);
 
-  // 4. Solid deep black mask covers the ENTIRE image so it turns 100% deep black at full zoom
-  const solidBlackOpacity = useTransform(scrollYProgress, [0.35, 0.85, 1], [0, 1, 1]);
+  // 4. Solid deep black overlay gracefully transitions into the portfolio section
+  const solidBlackOpacity = useTransform(smoothProgress, [0.3, 0.96], [0, 1]);
 
   return (
     <>
